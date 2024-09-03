@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Book {
+  id                String   @id @default(auto()) @map("_id") @db.ObjectId
+  isbn              String?  @unique
+  title             String
+  author            Author?  @relation(fields: [authorId], references: [id])
+  authorId          String?  @db.ObjectId
+  description       String?
+  genre             String?
+  publishedAt       DateTime?
+  fetchStatus       FetchStatus @default(MANUAL) // Default to manual if not fetching
+  availabilityStatus AvailabilityStatus @default(AVAILABLE)
+  fetchedAt         DateTime? // When info was fetched or manually filled
+}
+
+model Author {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  name  String
+  books Book[]
+}
+
+// Enum for tracking book data retrieval status
+enum FetchStatus {
+  MANUAL      // Manually filled book info
+  PENDING     // Waiting for API info
+  FETCHED     // Info successfully fetched
+  FETCH_ERROR // Error fetching from API
+}
+
+// Enum for tracking book availability status
+enum AvailabilityStatus {
+  AVAILABLE   // Book is available in the library
+  BORROWED    // Book is borrowed by a user
+  RESERVED    // Book is reserved by a user
+}
