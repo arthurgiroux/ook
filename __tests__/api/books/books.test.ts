@@ -35,6 +35,7 @@ describe("Books API", () => {
       title: "Test Book",
       authorId: "123",
       isbn: "9781234567897",
+      publishedAt: "2021-01-01",
     };
 
     prismaMock.book.create.mockResolvedValueOnce(book);
@@ -67,5 +68,28 @@ describe("Books API", () => {
     const body = await response.json();
     expect(response.status).toBe(500);
     expect(body).toEqual({ message: "Error creating book" });
+  });
+
+  it("should set publishedAt to null if not provided", async () => {
+    const book: any = {
+      id: "1",
+      title: "Test Book",
+      authorId: "123",
+      isbn: "9781234567897",
+    };
+
+    prismaMock.book.create.mockResolvedValueOnce(book);
+
+    const request: any = {
+      json: async () => ({
+        ...book,
+        publishedAt: undefined,
+      }),
+    };
+
+    const response = await POST(request);
+    const body = await response.json();
+    expect(response.status).toBe(201);
+    expect(body).toEqual(book);
   });
 });
