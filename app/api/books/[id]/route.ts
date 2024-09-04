@@ -1,7 +1,7 @@
 import prisma from "@/lib/prisma";
 
 export async function GET(
-  request: Request,
+  _request: Request,
   { params }: { params: { id: string | undefined } }
 ) {
   const bookId = params.id;
@@ -28,7 +28,7 @@ export async function GET(
 }
 
 export async function DELETE(
-  request: Request,
+  _request: Request,
   { params }: { params: { id: string | undefined } }
 ) {
   const bookId = params.id;
