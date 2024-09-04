@@ -1,6 +1,6 @@
 import prisma from "@/lib/prisma";
 
-export async function GET(request: Request) {
+export async function GET() {
   try {
     const books = await prisma.book.findMany();
     return new Response(JSON.stringify(books), { status: 200 });
@@ -13,9 +13,9 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  const { isbn, title, authorId, description, genre, publishedAt } =
-    await request.json();
   try {
+    const { isbn, title, authorId, description, genre, publishedAt } =
+      await request.json();
     const book = await prisma.book.create({
       data: {
         isbn,
