@@ -2,45 +2,11 @@
 
 exports[`renders homepage unchanged 1`] = `
 <div>
-  <div
-    class="MuiContainer-root MuiContainer-maxWidthLg  css-5c1adp-MuiContainer-root"
+  <button
+    class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+    type="button"
   >
-    <div
-      class="MuiBox-root css-rux501"
-    >
-      <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary   MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary  css-1apkmlw-MuiButtonBase-root-MuiButton-root"
-        tabindex="0"
-        type="button"
-      >
-        Text
-      </button>
-      <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary   MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary  css-142372x-MuiButtonBase-root-MuiButton-root"
-        tabindex="0"
-        type="button"
-      >
-        Contained
-      </button>
-      <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary   MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary  css-b4yaxo-MuiButtonBase-root-MuiButton-root"
-        tabindex="0"
-        type="button"
-      >
-        Outlined
-      </button>
-      <h1
-        class="MuiTypography-root MuiTypography-h4  css-ixo0sx-MuiTypography-root"
-      >
-        Material UI - Next.js App Router example in TypeScript
-      </h1>
-      <a
-        class="MuiTypography-root MuiTypography-inherit  MuiLink-root MuiLink-underlineAlways  css-f40qfk-MuiTypography-root-MuiLink-root"
-        href="/about"
-      >
-        Go to the about page
-      </a>
-    </div>
-  </div>
+    Button
+  </button>
 </div>
 `;

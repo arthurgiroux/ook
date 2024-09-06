@@ -1,10 +1,7 @@
-import Layout from "@/app/components/Layout";
+"use client";
 
-export default function Home() {
-  return (
-    <Layout>
-      <h1>Books</h1>
-      <p>Manage your library books here.</p>
-    </Layout>
-  );
+import { Button } from "@material-tailwind/react";
+
+export default function Page() {
+  return <Button>Button</Button>;
 }
