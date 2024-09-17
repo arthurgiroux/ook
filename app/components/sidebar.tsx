@@ -37,7 +37,7 @@ function SidebarDark() {
   return (
     <Card
       color="gray"
-      className="h-[calc(100vh-2rem)] w-full max-w-[20rem] mx-auto p-6 shadow-md"
+      className="h-screen w-full max-w-[20rem] p-6"
     >
       <div className="mb-2 flex items-center gap-4 p-4">
         <img
@@ -189,10 +189,6 @@ function SidebarDark() {
 
 export default function Sidebar() {
   return (
-    <section className="grid place-items-center">
-      <div className="grid gap-10 md:grid-cols-2 grid-cols-1">
-        <SidebarDark />
-      </div>
-    </section>
+    <SidebarDark />
   );
 }
