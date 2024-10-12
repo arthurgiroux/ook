@@ -35,10 +35,7 @@ function SidebarDark() {
     "text-gray-500 hover:text-white focus:text-white active:text-white hover:bg-opacity-20 focus:bg-opacity-20 active:bg-opacity-20";
 
   return (
-    <Card
-      color="gray"
-      className="h-screen w-full max-w-[20rem] p-6"
-    >
+    <Card color="gray" className="h-screen w-full max-w-[20rem] p-6">
       <div className="mb-2 flex items-center gap-4 p-4">
         <img
           src="https://www.material-tailwind.com/logos/mt-logo.png"
@@ -188,7 +185,5 @@ function SidebarDark() {
 }
 
 export default function Sidebar() {
-  return (
-    <SidebarDark />
-  );
+  return <SidebarDark />;
 }

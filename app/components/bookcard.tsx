@@ -1,3 +1,5 @@
+import { useRouter } from "next/navigation";
+
 import {
   Button,
   Card,
@@ -15,8 +17,13 @@ interface BookCardProps {
 }
 
 export default function BookCard({ id, title, author }: BookCardProps) {
+  const router = useRouter();
+
   return (
-    <Card className="hover:bg-gray-800 bg-gray-900 p-2 m-4 cursor-pointer">
+    <Card
+      className="hover:bg-gray-800 bg-gray-900 p-2 m-4 cursor-pointer"
+      onClick={() => router.push(`/book/${id}`)}
+    >
       <CardHeader className="bg-gray-900" floated={false}>
         <img src="https://placehold.co/250x250" alt="card-image" />
       </CardHeader>
